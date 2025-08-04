@@ -1,0 +1,93 @@
+﻿📄 Game Design Document – [Working Title]
+Genre: Text-Based RPG / Auto-Battler
+Platform: Android (Unity3D)
+Inspiration: BuriedBornes 2, auto-battlers, tactical RPGs
+Multiplayer: Asynchronous PvP (initial), real-time PvP (future phase)
+Visual Style: Minimalist UI with text feedback and lightweight visuals
+________________
+
+
+🎮 Game Overview
+You command a squad of 5 adventurers in real-time, text-based combat against enemy parties. Battles are automated — players win through team-building, stat optimization, and clever use of abilities and AI-driven tactics. Combat logs detail every event in a stylized terminal-style interface.
+________________
+
+
+🧩 Core Gameplay
+🧙‍♂️ Character System
+Each character has:
+* Stats:
+
+   * Strength – Affects melee damage & HP
+
+   * Agility – Affects attack speed & cast speed
+
+   * Intelligence – Affects magic damage & mana
+
+   * Health / Mana – Resource pools
+
+   * Attack Speed – Governs real-time action intervals
+
+      * Abilities:
+
+         * 1 auto-attack
+
+         * 2–3 active skills with cooldowns
+
+            * Tactic:
+
+               * Determines AI behavior (e.g., healing allies, targeting lowest HP enemy)
+
+                  * Passive Traits:
+
+                     * Optional buffs (e.g., +10% damage if alone, immune to poison)
+
+                        * Equipment: (Planned post-launch)
+
+                           * Adds stat bonuses or passive effects
+
+________________
+
+
+👥 Party System
+                              * Players manage a party of 5 characters
+
+                              * Each character operates independently
+
+                              * Team synergy matters — e.g., tank + healer + DPS roles
+
+                              * Players configure:
+
+                                 * Character slots
+
+                                 * Tactical behavior
+
+                                 * Ability loadout
+
+________________
+
+
+⚔️ Combat System – Real-Time Auto-Battler
+🔄 Real-Time Independent Action System
+                                    * No global initiative — every character acts on their own cooldown loop
+
+                                    * Auto-attacks occur at set intervals (based on Attack Speed)
+
+                                    * Abilities cast when their cooldowns expire and AI conditions are met
+
+                                    * Combat is constantly resolving in a loop managed by the BattleManager
+
+🧠 Tactical AI System
+                                       * AI controls which skill to use, when, and on whom
+
+                                       * Example tactics:
+
+                                          * Aggressive: Always use offensive skills
+
+                                          * Protector: Use shielding or taunts to guard allies
+
+                                          * Healer: Heal lowest HP allies when under 50%
+
+                                          * Debuffer: Target strongest enemy with control skills
+
+📝 Text-Based Feedback
+                                             * Combat log shows real-time scrollable events:
